@@ -110,16 +110,37 @@ if(pos1>pos3&&may<pos1){
    return(may);
 }
 
-function multiplicarArgumentos() {
+function multiplicarArgumentos(arguments) {
    // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto.
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+   var multiplo=1
+   if(arguments.length===0){
+      return(0)
+   }else if(arguments.length===1){
+      var uno=arguments[0]
+      return(uno)
+   }else{
+      for(var a=0;a<arguments.length;a++){
+var num=arguments[a]
+         multiplo=multiplo*num
+
+      }
+   }
+   return(multiplo)
 }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
+   var cont=0;
+   for(var a=0;a<array.length;a++){
+      if(array[a]>18){
+         cont++;
+      }
+   }
+return cont;
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -127,18 +148,25 @@ function diaDeLaSemana(numeroDeDia) {
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
+
+
 }
 
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+   if(num.charAt(0)==="9"){
+      return(true)
+   }else return(false)
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+   var igual=array.every((val)=>val===array[0]);
+  return(igual)
 }
 
 function mesesDelAño(array) {
@@ -146,18 +174,48 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var meses=[]
+   for(var a=0;a<array.length;a++){
+      var status=array[a]
+      if(status=="Enero"||status=="Marzo"||status=="Noviembre"){
+meses.push(status)
+
+
+      }
+   }
+   if(meses.length===0){
+      return("No se encontraron los meses pedidos")
+   }
+   return(meses)
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   var seis=0
+   var multiplo=[];
+   for(var a=0;a<=60;a++){
+seis=a*6;
+multiplo.push(seis)
+   }
+   return(multiplo);
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var mayCien=[]
+   var memoria=0
+   for(var a=0;a<array.length;a++){
+memoria=array[a]
+if (memoria>100){
+   mayCien.push([array[a]])
+}
+
+   }
+  return(mayCien)
 }
 
 /* ----------------------------------------------------------------------------------
@@ -171,6 +229,21 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var arraySuma=[]
+   var nul=false;
+   for(var a=0;a<10;a++){
+      num+=2;
+      if(num===a){
+         nul=true;
+         return("Se interrumpió la ejecución");
+break;
+      }else {arraySuma.push(num);}
+
+   }
+if(nul===false){
+   return(arraySuma);
+}
+
 }
 
 function continueStatement(num) {
@@ -180,6 +253,16 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var arraySuma=[]
+   
+   for(var a=0;a<10;a++){
+      if(a===5){
+         continue;
+      }else{
+      num+=2;
+      arraySuma.push(num);}
+       } 
+       return(arraySuma);
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
